@@ -1,3 +1,4 @@
+// Simpelt datasæt med lokaler, deres bygning, etage og vejledning
 export const ROOMS = [
   {
     id: 'SPs10.01',

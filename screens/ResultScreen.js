@@ -1,3 +1,4 @@
+// Resultat-skærm: filtrerer lokaler og viser liste
 import React, { useMemo } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { styles } from '../styles/styles';
@@ -6,6 +7,7 @@ import { ROOMS } from '../data/rooms';
 export default function ResultsScreen({ route, navigation }) {
   const q = (route.params?.query || '').trim().toLowerCase();
 
+  // Filtrer lokaler efter forespørgsel (id, navn eller bygning)
   const filtered = useMemo(() => {
     if (!q) return ROOMS.slice(0, 10);
     return ROOMS.filter(r =>
@@ -19,6 +21,7 @@ export default function ResultsScreen({ route, navigation }) {
     <View style={styles.container}>
       <Text style={styles.h2}>Resultater {q ? `for "${q}"` : ''}</Text>
 
+      {/* Klik på et element for at åbne kortet */}
       <FlatList
         data={filtered}
         keyExtractor={(item) => item.id}

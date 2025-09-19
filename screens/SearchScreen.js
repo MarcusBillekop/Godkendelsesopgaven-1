@@ -1,3 +1,4 @@
+// Søg-skærm: indtastning af forespørgsel og demo-knap
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from '../styles/styles';
@@ -20,6 +21,7 @@ export default function SearchScreen({ navigation }) {
         autoCapitalize="none"
       />
 
+      {/* Søg i dataset og vis resultater */}
       <TouchableOpacity
         style={styles.btnPrimary}
         onPress={() => navigation.navigate('Results', { query })}
@@ -27,6 +29,7 @@ export default function SearchScreen({ navigation }) {
         <Text style={styles.btnText}>Søg</Text>
       </TouchableOpacity>
 
+      {/* Demo: spring direkte til kort for FH-B */}
       <TouchableOpacity
         style={styles.btnSecondary}
         onPress={() => navigation.navigate('Map', { room: {

@@ -1,3 +1,4 @@
+// Fælles styling anvendt på tværs af skærme
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
