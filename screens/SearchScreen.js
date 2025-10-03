@@ -43,6 +43,21 @@ export default function SearchScreen({ navigation }) {
       >
         <Text style={styles.btnText}>Demo: FH-B på kort</Text>
       </TouchableOpacity>
+
+      {/* Ekstra funktionalitet: Kantine */}
+      <TouchableOpacity
+        style={styles.btnSecondary}
+        onPress={() => navigation.navigate('Canteen')}
+      >
+        <Text style={styles.btnText}>Kantine (info)</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.btnSecondary}
+        onPress={() => navigation.navigate('CanteenMenu')}
+      >
+        <Text style={styles.btnText}>Kantine (menu)</Text>
+      </TouchableOpacity>
     </View>
   );
 }
